@@ -11,7 +11,7 @@ endif
 let g:loaded_vim_printer = 1
 
 let s:vim_printer_items_full = { 
-            \ 'python': 'print("{$}:", {$})', 
+            \ 'python': 'print("{$}: ", {$})', 
             \ 'javascript': 'console.log("{$}:", {$})',
             \ 'javascript.jsx': 'console.log("{$}:", {$})',
             \ 'typescript': 'console.log("{$}:", {$})',
@@ -31,8 +31,8 @@ for pi in keys(g:vim_printer_items)
   let s:vim_printer_items_full[pi] = g:vim_printer_items[pi]
 endfor
 
-let s:print_below_keybinding = get(g:, 'vim_printer_print_below_keybinding', '<leader>p')
-let s:print_above_keybinding = get(g:, 'vim_printer_print_above_keybinding', '<leader>P')
+let s:print_below_keybinding = get(g:, 'vim_printer_print_below_keybinding', '<Leader><Down>')
+let s:print_above_keybinding = get(g:, 'vim_printer_print_above_keybinding', '<Leader><Up>')
 
 
 " i am not sure if this is the right way to do it
